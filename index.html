@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,6 +210,9 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">Request/Response details</a>
+        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -229,10 +232,10 @@
                   <li>
                     <a href="#data-interchange-format" class="toc-h2 toc-link" data-title="data-interchange-format">Data interchange format</a>
                   </li>
+                  <li>
+                    <a href="#authentication-a-k-a-login" class="toc-h2 toc-link" data-title="authentication-a-k-a-login">Authentication (a.k.a. login)</a>
+                  </li>
               </ul>
-          </li>
-          <li>
-            <a href="#authentication-a-k-a-login" class="toc-h1 toc-link" data-title="authentication-a-k-a-login">Authentication (a.k.a. login)</a>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
@@ -249,9 +252,34 @@
 <p>This document contains information about turboSMTP&#39;s public API. Please report bugs to: <a href="mailto:info@turbosmtp.com">info@turbosmtp.com</a></p>
 <h1 id='getting-started'>Getting started</h1><h2 id='data-interchange-format'>Data interchange format</h2>
 <p>For the most part (and where not otherwise explicit) turboSMTP’s API uses JSON as the data format of choice when it comes to request and response bodies.</p>
-<h1 id='authentication-a-k-a-login'>Authentication (a.k.a. login)</h1><h1 id='errors'>Errors</h1>
+<h2 id='authentication-a-k-a-login'>Authentication (a.k.a. login)</h2>
+<p>The <code>auth</code> value in the response has to be used as a custom cookie for all requests towards turboSMTP&#39;s API.</p>
+<h3 id='request-endpoint'>Request endpoint:</h3>
+<p><code>
+GET https://api.turbo-smtp.com/api/authorize/:username/:password
+</code></p>
+
+<ul>
+<li><code>username</code> is the email of turboSMTP account</li>
+<li><code>password</code> is the password of turboSMTP account</li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre><h1 id='errors'>Errors</h1>
       </div>
       <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">Request/Response details</a>
+          </div>
       </div>
     </div>
   </body>
