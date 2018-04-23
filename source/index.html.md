@@ -51,3 +51,19 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ```
 
+> Response body (successful authentication):
+
+```json
+{
+    "auth" : "44cf4c6e0e9cbe32f6fd83ff69a9df3b6212828c"
+}
+```
+
+> Response body (unsuccessful authentication):
+
+```json
+{
+    "errorCode" : 1,
+    "message": "Wrong credentials specified"
+}
+```
