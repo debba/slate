@@ -233,7 +233,33 @@
                     <a href="#data-interchange-format" class="toc-h2 toc-link" data-title="data-interchange-format">Data interchange format</a>
                   </li>
                   <li>
+                    <a href="#accessing-resources" class="toc-h2 toc-link" data-title="accessing-resources">Accessing resources</a>
+                  </li>
+                  <li>
                     <a href="#authentication-a-k-a-login" class="toc-h2 toc-link" data-title="authentication-a-k-a-login">Authentication (a.k.a. login)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#reports" class="toc-h1 toc-link" data-title="reports">Reports</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#reports-by-type-in-time-range" class="toc-h2 toc-link" data-title="reports-by-type-in-time-range">Reports by type in time range</a>
+                  </li>
+                  <li>
+                    <a href="#count-reports-by-type-in-time-range" class="toc-h2 toc-link" data-title="count-reports-by-type-in-time-range">Count reports by type in time range</a>
+                  </li>
+                  <li>
+                    <a href="#export-reports-in-csv-by-type-in-time-range" class="toc-h2 toc-link" data-title="export-reports-in-csv-by-type-in-time-range">Export reports in CSV by type in time range</a>
+                  </li>
+                  <li>
+                    <a href="#all-reports-by-type" class="toc-h2 toc-link" data-title="all-reports-by-type">All reports by type</a>
+                  </li>
+                  <li>
+                    <a href="#count-all-reports-by-type" class="toc-h2 toc-link" data-title="count-all-reports-by-type">Count all reports by type</a>
+                  </li>
+                  <li>
+                    <a href="#export-all-reports-in-csv-by-type" class="toc-h2 toc-link" data-title="export-all-reports-in-csv-by-type">Export all reports in CSV by type</a>
                   </li>
               </ul>
           </li>
@@ -252,11 +278,17 @@
 <p>This document contains information about turboSMTP&#39;s public API. Please report bugs to: <a href="mailto:info@turbosmtp.com">info@turbosmtp.com</a></p>
 <h1 id='getting-started'>Getting started</h1><h2 id='data-interchange-format'>Data interchange format</h2>
 <p>For the most part (and where not otherwise explicit) turboSMTP’s API uses JSON as the data format of choice when it comes to request and response bodies.</p>
+<h2 id='accessing-resources'>Accessing resources</h2>
+<p>Authorization to access a user’s resource is granted to clients provided they set a authentication cookie into their request, valued with the proper authentication key issued by turboSMTP servers. The authentication key is user-based and it is issued by turboSMTP servers upon successful user’s email address + password challenge, performed by means of appropriate request.</p>
+
+<p>As an example, such cookie should look like what follows:</p>
+
+<p><code>authorizationKey: 44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c</code></p>
 <h2 id='authentication-a-k-a-login'>Authentication (a.k.a. login)</h2>
 <p>The <code>auth</code> value in the response has to be used as a custom cookie for all requests towards turboSMTP&#39;s API.</p>
 <h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
-GET https://api.turbo-smtp.com/api/authorize/:username/:password
+GET https://dashboard.serversmtp.com/api/authorize/:username/:password
 </code></p>
 
 <ul>
@@ -279,7 +311,7 @@ Content-Type: application/json; charset=utf-8
 <p>Response body (successful authentication):</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"44cf4c6e0e9cbe32f6fd83ff69a9df3b6212828c"</span><span class="w">
+    </span><span class="s2">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -289,7 +321,202 @@ Content-Type: application/json; charset=utf-8
     </span><span class="s2">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong credentials specified"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='errors'>Errors</h1>
+</span></code></pre><h1 id='reports'>Reports</h1>
+<p>The following requests will allow you to show a reports list, count results, delete a single instance and export in CSV format.</p>
+<h2 id='reports-by-type-in-time-range'>Reports by type in time range</h2><h3 id='request-endpoint'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
+</code></p>
+
+<ul>
+<li><code>type</code> parameters represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>page</code> parameter represents the page number</li>
+<li><code>filter</code> parameter is the search filter</li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">323223135</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andrea.colombini@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27T06:31:42.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.149.128.154 does not like recipient. Remote host said: 550 5.1.1 &lt;andrea.colombini@dueclic.com&gt; : sorry, no mailbox here by that name (#5.1.1 - chkuser) {1.2.3.4} Giving up on 1.2.3.4. "</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='count-reports-by-type-in-time-range'>Count reports by type in time range</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
+</code></p>
+
+<ul>
+<li><code>type</code> parameters represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>page</code> parameter represents the page number</li>
+<li><code>filter</code> parameter is the search filter</li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='export-reports-in-csv-by-type-in-time-range'>Export reports in CSV by type in time range</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
+</code></p>
+
+<ul>
+<li><code>type</code> parameters represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>page</code> parameter represents the page number</li>
+<li><code>filter</code> parameter is the search filter</li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+</ul>
+<h2 id='all-reports-by-type'>All reports by type</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&amp;filter=:filter&amp;tz=:tz
+</code></p>
+
+<ul>
+<li><code>type</code> parameters represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>page</code> parameter represents the page number</li>
+<li><code>filter</code> parameter is the search filter</li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">323223135</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27T06:31:42.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.149.128.154 does not like recipient. Remote host said: 550 5.1.1 &lt;andrea.debernardi@dueclic.com&gt; : sorry, no mailbox here by that name (#5.1.1 - chkuser) {1.2.3.4} Giving up on 1.2.3.4. "</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='count-all-reports-by-type'>Count all reports by type</h2><h3 id='request-endpoint-5'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:filter&amp;tz=:tz&amp;page=:page
+</code></p>
+
+<ul>
+<li><code>type</code> parameters represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>filter</code> parameter is the search filter</li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+<li><code>page</code> parameter represents the page number (optional)</li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">520</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='export-all-reports-in-csv-by-type'>Export all reports in CSV by type</h2><h3 id='request-endpoint-6'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filter&amp;tz=:tz&amp;page=:page
+</code></p>
+
+<ul>
+<li><code>type</code> parameters represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
+<li><code>page</code> parameter represents the page number</li>
+<li><code>filter</code> parameter is the search filter</li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+<li><code>page</code> parameter represents the page number (optional)</li>
+</ul>
+<h1 id='errors'>Errors</h1>
 <p>The turboSMTP API uses the following error codes:</p>
 
 <table><thead>
