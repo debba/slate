@@ -274,7 +274,60 @@ GET https://api.turbo-smtp.com/api/authorize/:username/:password
 </blockquote>
 <pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre><h1 id='errors'>Errors</h1>
+</code></pre>
+<blockquote>
+<p>Response body (successful authentication):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"44cf4c6e0e9cbe32f6fd83ff69a9df3b6212828c"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response body (unsuccessful authentication):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong credentials specified"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='errors'>Errors</h1>
+<p>The turboSMTP API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Type</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Invalid authorization credentials</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Provided account is inactive. Maybe you are banned.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Invalid authorization token</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Resource not found</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Server system error</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Concurrent modification exception</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Access to requested resources is denied</td>
+</tr>
+</tbody></table>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
