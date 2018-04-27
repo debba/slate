@@ -261,6 +261,26 @@
                   <li>
                     <a href="#export-all-reports-in-csv-by-type" class="toc-h2 toc-link" data-title="export-all-reports-in-csv-by-type">Export all reports in CSV by type</a>
                   </li>
+                  <li>
+                    <a href="#delete-report-by-type" class="toc-h2 toc-link" data-title="delete-report-by-type">Delete report by type</a>
+                  </li>
+                  <li>
+                    <a href="#delete-all-spam-reports" class="toc-h2 toc-link" data-title="delete-all-spam-reports">Delete all spam reports</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#statistics" class="toc-h1 toc-link" data-title="statistics">Statistics</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#email-sent-statistics" class="toc-h2 toc-link" data-title="email-sent-statistics">Email sent statistics</a>
+                  </li>
+                  <li>
+                    <a href="#count-of-email-sent" class="toc-h2 toc-link" data-title="count-of-email-sent">Count of email sent</a>
+                  </li>
+                  <li>
+                    <a href="#export-email-sent-statistics-in-csv" class="toc-h2 toc-link" data-title="export-email-sent-statistics-in-csv">Export email sent statistics in CSV</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -329,7 +349,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -371,7 +391,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&am
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -408,7 +428,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&amp;
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -427,7 +447,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&amp;fi
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -467,7 +487,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:fil
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -502,7 +522,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -515,6 +535,198 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 <li><code>filter</code> parameter is the search filter</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 <li><code>page</code> parameter represents the page number (optional)</li>
+</ul>
+<h2 id='delete-report-by-type'>Delete report by type</h2><h3 id='request-endpoint-7'>Request endpoint:</h3>
+<p><code>
+DELETE https://dashboard.serversmtp.com/web/api/reports/:type?ids=:ids
+</code></p>
+
+<ul>
+<li><code>type</code> parameter represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>ids</code> comma separated reports id to delete</li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='delete-all-spam-reports'>Delete all spam reports</h2><h3 id='request-endpoint-8'>Request endpoint:</h3>
+<p><code>
+DELETE https://dashboard.serversmtp.com/web/api/reports/spam/all
+</code></p>
+
+<p>No params needed</p>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='statistics'>Statistics</h1>
+<p>The following requests will allow you to show statistics list, count results and export in CSV format.</p>
+<h2 id='email-sent-statistics'>Email sent statistics</h2><h3 id='request-endpoint'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/stats/panes/emails?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
+</code></p>
+
+<ul>
+<li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
+<li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
+<li><code>page</code> parameter represents the page number</li>
+<li><code>filter</code> parameter is the status filter, possible values:
+
+<ul>
+<li><code>*</code> or not set to get all statuses</li>
+<li><code>NEW</code>, <code>DEFER</code>, <code>SUCCESS</code>, <code>OPEN</code>, <code>CLICK</code>, <code>REPORT</code>, <code>FAIL</code>, <code>SYSFAIL</code>, <code>UNSUB</code>, <code>REPORT</code></li>
+<li>Combination of statuses in array format</li>
+</ul></li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+</ul>
+
+<p>Some filter combinations:</p>
+
+<ul>
+<li>Queued emails : <code>[&quot;NEW&quot;, &quot;DEFER&quot;]</code></li>
+<li>Delivered emails : <code>[&quot;SUCCESS&quot;,&quot;OPEN&quot;,&quot;CLICK&quot;,&quot;UNSUB&quot;,&quot;REPORT&quot;]</code></li>
+<li>Read emails : <code>[&quot;OPEN&quot;,&quot;CLICK&quot;,&quot;UNSUB&quot;,&quot;REPORT&quot;]</code></li>
+<li>Bounce emails : <code>[&#39;FAIL&#39;, &#39;SYSFAIL&#39;]</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4612864212</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Test for documentation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="s2">"christian.serafino@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"andrea@debbaweb.it"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-24T10:58:06.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4611292665</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Test for documentation #2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"test-dev@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-23T17:33:02.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"OPEN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
+</code></p>
+
+<ul>
+<li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
+<li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
+<li><code>page</code> parameter represents the page number (optional)</li>
+<li><code>filter</code> parameter is the status filter, possible values:
+
+<ul>
+<li><code>*</code> or not set to get all statuses</li>
+<li><code>NEW</code>, <code>DEFER</code>, <code>SUCCESS</code>, <code>OPEN</code>, <code>CLICK</code>, <code>REPORT</code>, <code>FAIL</code>, <code>SYSFAIL</code>, <code>UNSUB</code>, <code>REPORT</code></li>
+<li>Combination of statuses in array format</li>
+</ul></li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+</ul>
+
+<p>Some filter combinations:</p>
+
+<ul>
+<li>Queued emails : <code>[&quot;NEW&quot;, &quot;DEFER&quot;]</code></li>
+<li>Delivered emails : <code>[&quot;SUCCESS&quot;,&quot;OPEN&quot;,&quot;CLICK&quot;,&quot;UNSUB&quot;,&quot;REPORT&quot;]</code></li>
+<li>Read emails : <code>[&quot;OPEN&quot;,&quot;CLICK&quot;,&quot;UNSUB&quot;,&quot;REPORT&quot;]</code></li>
+<li>Bounce emails : <code>[&#39;FAIL&#39;, &#39;SYSFAIL&#39;]</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='export-email-sent-statistics-in-csv'>Export email sent statistics in CSV</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/stats/emails/csv?start_date=:start_date&amp;end_date=:end_date&amp;filter=:filter&amp;tz=:tz
+</code></p>
+
+<ul>
+<li><code>start_date</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
+<li><code>end_date</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
+<li><code>filter</code> parameter is the status filter, possible values:
+
+<ul>
+<li><code>*</code> or not set to get all statuses</li>
+<li><code>NEW</code>, <code>DEFER</code>, <code>SUCCESS</code>, <code>OPEN</code>, <code>CLICK</code>, <code>REPORT</code>, <code>FAIL</code>, <code>SYSFAIL</code>, <code>UNSUB</code>, <code>REPORT</code></li>
+<li>Combination of statuses in array format</li>
+</ul></li>
+<li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
+</ul>
+
+<p>Some filter combinations:</p>
+
+<ul>
+<li>Queued emails : <code>[&quot;NEW&quot;, &quot;DEFER&quot;]</code></li>
+<li>Delivered emails : <code>[&quot;SUCCESS&quot;,&quot;OPEN&quot;,&quot;CLICK&quot;,&quot;UNSUB&quot;,&quot;REPORT&quot;]</code></li>
+<li>Read emails : <code>[&quot;OPEN&quot;,&quot;CLICK&quot;,&quot;UNSUB&quot;,&quot;REPORT&quot;]</code></li>
+<li>Bounce emails : <code>[&#39;FAIL&#39;, &#39;SYSFAIL&#39;]</code></li>
 </ul>
 <h1 id='errors'>Errors</h1>
 <p>The turboSMTP API uses the following error codes:</p>

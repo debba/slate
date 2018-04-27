@@ -6,7 +6,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -48,7 +48,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&am
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -85,7 +85,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&amp;
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -104,7 +104,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&amp;fi
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -144,7 +144,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:fil
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -179,7 +179,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 </code></p>
 
 <ul>
-<li><code>type</code> parameters represents the type of report, possible values are:
+<li><code>type</code> parameter represents the type of report, possible values are:
 
 <ul>
 <li><code>bounce</code> for bounces</li>
@@ -193,3 +193,61 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 <li><code>page</code> parameter represents the page number (optional)</li>
 </ul>
+<h2 id='delete-report-by-type'>Delete report by type</h2><h3 id='request-endpoint-7'>Request endpoint:</h3>
+<p><code>
+DELETE https://dashboard.serversmtp.com/web/api/reports/:type?ids=:ids
+</code></p>
+
+<ul>
+<li><code>type</code> parameter represents the type of report, possible values are:
+
+<ul>
+<li><code>bounce</code> for bounces</li>
+<li><code>spam</code> for spam</li>
+<li><code>unsub</code> for unsubscriptions</li>
+</ul></li>
+<li><code>ids</code> comma separated reports id to delete</li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='delete-all-spam-reports'>Delete all spam reports</h2><h3 id='request-endpoint-8'>Request endpoint:</h3>
+<p><code>
+DELETE https://dashboard.serversmtp.com/web/api/reports/spam/all
+</code></p>
+
+<p>No params needed</p>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
