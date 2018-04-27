@@ -241,6 +241,28 @@
               </ul>
           </li>
           <li>
+            <a href="#send-email" class="toc-h1 toc-link" data-title="send-email">Send email</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#send-email-2" class="toc-h2 toc-link" data-title="send-email">Send email</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#account-info" class="toc-h2 toc-link" data-title="account-info">Account info</a>
+                  </li>
+                  <li>
+                    <a href="#active-plans" class="toc-h2 toc-link" data-title="active-plans">Active plans</a>
+                  </li>
+                  <li>
+                    <a href="#subaccounts-list" class="toc-h2 toc-link" data-title="subaccounts-list">Subaccounts list</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#reports" class="toc-h1 toc-link" data-title="reports">Reports</a>
               <ul class="toc-list-h2">
                   <li>
@@ -276,10 +298,24 @@
                     <a href="#email-sent-statistics" class="toc-h2 toc-link" data-title="email-sent-statistics">Email sent statistics</a>
                   </li>
                   <li>
+                    <a href="#last-email-sent-statistics" class="toc-h2 toc-link" data-title="last-email-sent-statistics">Last email sent statistics</a>
+                  </li>
+                  <li>
                     <a href="#count-of-email-sent" class="toc-h2 toc-link" data-title="count-of-email-sent">Count of email sent</a>
                   </li>
                   <li>
                     <a href="#export-email-sent-statistics-in-csv" class="toc-h2 toc-link" data-title="export-email-sent-statistics-in-csv">Export email sent statistics in CSV</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tools" class="toc-h1 toc-link" data-title="tools">Tools</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#click-tracking-enable-disable" class="toc-h2 toc-link" data-title="click-tracking-enable-disable">Click tracking - enable / disable</a>
+                  </li>
+                  <li>
+                    <a href="#open-tracking-enable-disable" class="toc-h2 toc-link" data-title="open-tracking-enable-disable">Open tracking - enable / disable</a>
                   </li>
               </ul>
           </li>
@@ -341,8 +377,181 @@ Content-Type: application/json; charset=utf-8
     </span><span class="s2">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong credentials specified"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='send-email'>Send email</h1><h2 id='send-email-2'>Send email</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+POST https://api.turbo-smtp.com/api/mail/send
+</code></p>
+
+<ul>
+<li><code>username</code> is the email of turboSMTP account (this param can be used as POST or GET)</li>
+<li><code>password</code> is the password of turboSMTP account (this param can be used as POST or GET)</li>
+<li><code>from</code> is the from address</li>
+<li><code>to</code> is provided as comma-separated recipients list</li>
+<li><code>subject</code> is the subject of the email (optional)</li>
+<li><code>cc</code> is provided as comma-separated copy list (optional)</li>
+<li><code>bcc</code> is provided as comma-separated hidden copy list (optional)</li>
+<li><code>content</code> is the text content of the email (optional)</li>
+<li><code>html_content</code> is the html content of the email (optional)</li>
+<li><code>custom_headers</code> are additional headers, e.g. <code>{&quot;X-key1&quot;:&quot;value1&quot;, &quot;X-key2&quot;:&quot;value2&quot;}</code> (optional)</li>
+<li><code>mime_raw</code> mime message which replaces <code>content</code> and <code>html_content</code></li>
+</ul>
+<h3 id='some-implementations'>Some implementations</h3>
+<p>PHP: <a href="https://dashboard.serversmtp.com/downloads/turbo_send_email_code.zip" title="Go to PHP implementation">Download PHP sample code</a></p>
+
+<p>C#: <a href="https://dashboard.serversmtp.com/downloads/CSharp-turboSMTP-API.zip" title="Go to C# implementation">Download C# sample code</a></p>
+
+<p>Java: <a href="https://dashboard.serversmtp.com/downloads/Java-turboSMTP-API.zip" title="Go to Java implementation">Download Java sample code</a></p>
+
+<p>Python: <a href="https://dashboard.serversmtp.com/downloads/Python-turboSMTP-API.zip" title="Go to Python implementation">Download Python sample code</a></p>
+
+<p>Perl: <a href="https://dashboard.serversmtp.com/downloads/Perl-turboSMTP-API.zip" title="Go to Perl implementation">Download Perl sample code</a></p>
+
+<p>Ruby: <a href="https://dashboard.serversmtp.com/downloads/Ruby-turboSMTP-API.zip" title="Go to Ruby implementation">Download Ruby sample code</a></p>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body (successful authentication):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w"> 
+   </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"OK"</span><span class="w"> 
+ </span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p>Response body (in case of error):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w"> 
+     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"error message"</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w"> 
+</span></code></pre><h1 id='accounts'>Accounts</h1>
+<p>The following requests will allow you to show accounts info.</p>
+<h2 id='account-info'>Account info</h2><h3 id='request-endpoint'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/user/info
+</code></p>
+
+<p>No params needed.</p>
+
+<aside class="notice">
+<strong>NOTE:</strong> <em>The response body shown here aside is just a convenient subset of the real whole response.</em>
+</aside> 
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"passwd"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"active"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"andrea@emailchef.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"gateway"</span><span class="p">:</span><span class="s2">"q1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ip"</span><span class="p">:</span><span class="mi">3350965831</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accountid"</span><span class="p">:</span><span class="mi">18897904</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='active-plans'>Active plans</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/plans
+</code></p>
+
+<p>No params needed.</p>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_limit_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan_expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-04T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-24T08:58:06.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parentid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expired"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_limit_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monthly"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan_expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-03T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-04T08:47:16.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parentid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expired"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+
+</span></code></pre><h2 id='subaccounts-list'>Subaccounts list</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/useraccounts/summary
+</code></p>
+
+<p>No params needed.</p>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subaccount@dueclic.com"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"199.244.75.99"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"sent"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+ </span><span class="p">}]</span><span class="w">
+
 </span></code></pre><h1 id='reports'>Reports</h1>
 <p>The following requests will allow you to show a reports list, count results, delete a single instance and export in CSV format.</p>
+
+<p>In the list requests <code>20</code> results for page are shown.</p>
 <h2 id='reports-by-type-in-time-range'>Reports by type in time range</h2><h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
@@ -359,7 +568,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 
@@ -401,7 +610,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&am
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 
@@ -438,7 +647,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&amp;
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 <h2 id='all-reports-by-type'>All reports by type</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
@@ -455,7 +664,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&amp;fi
 <li><code>unsub</code> for unsubscriptions</li>
 </ul></li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 
@@ -494,7 +703,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:fil
 <li><code>spam</code> for spam</li>
 <li><code>unsub</code> for unsubscriptions</li>
 </ul></li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 <li><code>page</code> parameter represents the page number (optional)</li>
 </ul>
@@ -532,7 +741,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 <li><code>page</code> parameter represents the page number (optional)</li>
 </ul>
@@ -595,6 +804,8 @@ Content-Type: application/json; charset=utf-8
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='statistics'>Statistics</h1>
 <p>The following requests will allow you to show statistics list, count results and export in CSV format.</p>
+
+<p>In the list requests <code>10</code> results for page are shown.</p>
 <h2 id='email-sent-statistics'>Email sent statistics</h2><h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/panes/emails?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
@@ -657,7 +868,41 @@ Content-Type: application/json; charset=utf-8
         </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre><h2 id='last-email-sent-statistics'>Last email sent statistics</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/stats/email-feed-last/:no
+</code></p>
+
+<ul>
+<li><code>no</code> parameter is number of results, possible values are: <code>10</code>, <code>20</code>, <code>30</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4612864212</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Last test for documentation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="s2">"chiara.cortese@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-24T10:58:06.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
 </code></p>
@@ -702,7 +947,7 @@ Content-Type: application/json; charset=utf-8
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='export-email-sent-statistics-in-csv'>Export email sent statistics in CSV</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+</span></code></pre><h2 id='export-email-sent-statistics-in-csv'>Export email sent statistics in CSV</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/emails/csv?start_date=:start_date&amp;end_date=:end_date&amp;filter=:filter&amp;tz=:tz
 </code></p>
@@ -728,7 +973,78 @@ GET https://dashboard.serversmtp.com/api/stats/emails/csv?start_date=:start_date
 <li>Read emails : <code>[&quot;OPEN&quot;,&quot;CLICK&quot;,&quot;UNSUB&quot;,&quot;REPORT&quot;]</code></li>
 <li>Bounce emails : <code>[&#39;FAIL&#39;, &#39;SYSFAIL&#39;]</code></li>
 </ul>
-<h1 id='errors'>Errors</h1>
+<h1 id='tools'>Tools</h1>
+<p>The following requests will allow you to enable / disable some turboSMTP tools.</p>
+<h2 id='click-tracking-enable-disable'>Click tracking - enable / disable</h2><h3 id='request-endpoint'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/tools/clickTracking/:action
+</code></p>
+
+<ul>
+<li><code>action</code> param, possible values are: <code>enable</code> or <code>disable</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body (in case of enabling):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clickTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking_plaintext"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='open-tracking-enable-disable'>Open tracking - enable / disable</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/tools/openingTracking/:action
+</code></p>
+
+<ul>
+<li><code>action</code> param, possible values are: <code>enable</code> or <code>disable</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body (in case of disabling):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openingTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='errors'>Errors</h1>
 <p>The turboSMTP API uses the following error codes:</p>
 
 <table><thead>

@@ -1,0 +1,72 @@
+<h1 id='tools'>Tools</h1>
+<p>The following requests will allow you to enable / disable some turboSMTP tools.</p>
+<h2 id='click-tracking-enable-disable'>Click tracking - enable / disable</h2><h3 id='request-endpoint'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/tools/clickTracking/:action
+</code></p>
+
+<ul>
+<li><code>action</code> param, possible values are: <code>enable</code> or <code>disable</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body (in case of enabling):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clickTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking_plaintext"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='open-tracking-enable-disable'>Open tracking - enable / disable</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/tools/openingTracking/:action
+</code></p>
+
+<ul>
+<li><code>action</code> param, possible values are: <code>enable</code> or <code>disable</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body (in case of disabling):</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openingTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>

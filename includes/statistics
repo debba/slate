@@ -1,5 +1,7 @@
 <h1 id='statistics'>Statistics</h1>
 <p>The following requests will allow you to show statistics list, count results and export in CSV format.</p>
+
+<p>In the list requests <code>10</code> results for page are shown.</p>
 <h2 id='email-sent-statistics'>Email sent statistics</h2><h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/panes/emails?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
@@ -62,7 +64,41 @@ Content-Type: application/json; charset=utf-8
         </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre><h2 id='last-email-sent-statistics'>Last email sent statistics</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/stats/email-feed-last/:no
+</code></p>
+
+<ul>
+<li><code>no</code> parameter is number of results, possible values are: <code>10</code>, <code>20</code>, <code>30</code></li>
+</ul>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre>
+<blockquote>
+<p>Response body:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4612864212</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Last test for documentation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="s2">"chiara.cortese@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-24T10:58:06.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
 </code></p>
@@ -107,7 +143,7 @@ Content-Type: application/json; charset=utf-8
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='export-email-sent-statistics-in-csv'>Export email sent statistics in CSV</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+</span></code></pre><h2 id='export-email-sent-statistics-in-csv'>Export email sent statistics in CSV</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/emails/csv?start_date=:start_date&amp;end_date=:end_date&amp;filter=:filter&amp;tz=:tz
 </code></p>

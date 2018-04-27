@@ -1,5 +1,7 @@
 <h1 id='reports'>Reports</h1>
 <p>The following requests will allow you to show a reports list, count results, delete a single instance and export in CSV format.</p>
+
+<p>In the list requests <code>20</code> results for page are shown.</p>
 <h2 id='reports-by-type-in-time-range'>Reports by type in time range</h2><h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
@@ -16,7 +18,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 
@@ -58,7 +60,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&am
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 
@@ -95,7 +97,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&amp;
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 <h2 id='all-reports-by-type'>All reports by type</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
@@ -112,7 +114,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&amp;fi
 <li><code>unsub</code> for unsubscriptions</li>
 </ul></li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 </ul>
 
@@ -151,7 +153,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:fil
 <li><code>spam</code> for spam</li>
 <li><code>unsub</code> for unsubscriptions</li>
 </ul></li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 <li><code>page</code> parameter represents the page number (optional)</li>
 </ul>
@@ -189,7 +191,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD&#39;</li>
 <li><code>page</code> parameter represents the page number</li>
-<li><code>filter</code> parameter is the search filter</li>
+<li><code>filter</code> parameter is the search filter for email</li>
 <li><code>tz</code> is the timezone offset (default: <code>+01:00</code>)</li>
 <li><code>page</code> parameter represents the page number (optional)</li>
 </ul>
