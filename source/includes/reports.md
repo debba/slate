@@ -10,7 +10,7 @@ The following requests will allow you to show a reports list, count results, del
 GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&end=:end&page=:page&filter=:filter&tz=:tz
 `
 
-- `type` parameters represents the type of report, possible values are:
+- `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
@@ -54,7 +54,7 @@ Content-Type: application/json; charset=utf-8
 GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&end=:end&page=:page&filter=:filter&tz=:tz
 `
 
-- `type` parameters represents the type of report, possible values are:
+- `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
@@ -93,7 +93,7 @@ Content-Type: application/json; charset=utf-8
 GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&end=:end&page=:page&filter=:filter&tz=:tz
 `
 
-- `type` parameters represents the type of report, possible values are:
+- `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
@@ -111,7 +111,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&end=
 GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&filter=:filter&tz=:tz
 `
 
-- `type` parameters represents the type of report, possible values are:
+- `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
@@ -153,7 +153,7 @@ Content-Type: application/json; charset=utf-8
 GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:filter&tz=:tz&page=:page
 `
 
-- `type` parameters represents the type of report, possible values are:
+- `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
@@ -190,7 +190,7 @@ Content-Type: application/json; charset=utf-8
 GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filter&tz=:tz&page=:page
 `
 
-- `type` parameters represents the type of report, possible values are:
+- `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
@@ -200,3 +200,69 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 - `filter` parameter is the search filter
 - `tz` is the timezone offset (default: `+01:00`)
 - `page` parameter represents the page number (optional)
+
+## Delete report by type
+
+### Request endpoint:
+
+`
+DELETE https://dashboard.serversmtp.com/web/api/reports/:type?ids=:ids
+`
+
+- `type` parameter represents the type of report, possible values are:
+    - `bounce` for bounces
+    - `spam` for spam
+    - `unsub` for unsubscriptions
+- `ids` comma separated reports id to delete
+
+> Request headers:
+
+```
+Content-Type: application/json; charset=utf-8
+```
+
+> Response headers:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+> Response body:
+
+```json
+{
+    "success" : true
+}
+```
+
+## Delete all spam reports
+
+### Request endpoint:
+
+`
+DELETE https://dashboard.serversmtp.com/web/api/reports/spam/all
+`
+
+No params needed
+
+> Request headers:
+
+```
+Content-Type: application/json; charset=utf-8
+```
+
+> Response headers:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+> Response body:
+
+```json
+{
+    "success" : true
+}
+```

@@ -9,6 +9,7 @@ language_tabs:
 
 includes:
   - reports
+  - statistics
   - errors
 
 search: true
