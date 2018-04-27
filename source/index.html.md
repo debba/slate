@@ -79,3 +79,72 @@ Content-Type: application/json; charset=utf-8
     "message": "Wrong credentials specified"
 }
 ```
+
+# Send email
+
+## Send email
+
+### Request endpoint:
+
+`
+POST https://api.turbo-smtp.com/api/mail/send
+`
+
+- `username` is the email of turboSMTP account (this param can be used as POST or GET)
+- `password` is the password of turboSMTP account (this param can be used as POST or GET)
+- `from` is the from address
+- `to` is provided as comma-separated recipients list
+- `subject` is the subject of the email (optional)
+- `cc` is provided as comma-separated copy list (optional)
+- `bcc` is provided as comma-separated hidden copy list (optional)
+- `content` is the text content of the email (optional)
+- `html_content` is the html content of the email (optional)
+- `custom_headers` are additional headers, e.g. `{"X-key1":"value1", "X-key2":"value2"}` (optional)
+- `mime_raw` mime message which replaces `content` and `html_content`
+
+### Some implementations
+
+PHP: [Download PHP sample code](https://dashboard.serversmtp.com/downloads/turbo_send_email_code.zip "Go to PHP implementation")
+
+C#: [Download C# sample code](https://dashboard.serversmtp.com/downloads/CSharp-turboSMTP-API.zip "Go to C# implementation")
+
+Java: [Download Java sample code](https://dashboard.serversmtp.com/downloads/Java-turboSMTP-API.zip "Go to Java implementation")
+
+Python: [Download Python sample code](https://dashboard.serversmtp.com/downloads/Python-turboSMTP-API.zip "Go to Python implementation")
+
+Perl: [Download Perl sample code](https://dashboard.serversmtp.com/downloads/Perl-turboSMTP-API.zip "Go to Perl implementation")
+
+Ruby: [Download Ruby sample code](https://dashboard.serversmtp.com/downloads/Ruby-turboSMTP-API.zip "Go to Ruby implementation")
+
+> Request headers:
+
+```
+Content-Type: application/json; charset=utf-8
+```
+
+> Response headers:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+> Response body (successful authentication):
+
+```json
+ { 
+   "message":"OK" 
+ }
+
+```
+
+> Response body (in case of error):
+
+```json
+ { 
+     "message": "error",
+     "errors": [
+        "error message"
+     ]
+ } 
+```
