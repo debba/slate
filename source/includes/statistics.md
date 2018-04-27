@@ -2,6 +2,8 @@
 
 The following requests will allow you to show statistics list, count results and export in CSV format.
 
+In the list requests `10` results for page are shown.
+
 ## Email sent statistics
 
 ### Request endpoint:
@@ -59,6 +61,45 @@ Content-Type: application/json; charset=utf-8
         "recipient":"test-dev@dueclic.com",
         "sendTime":"2018-04-23T17:33:02.000Z",
         "status":"OPEN",
+        "error":null
+    }
+]
+```
+
+## Last email sent statistics
+
+### Request endpoint:
+
+`
+GET https://dashboard.serversmtp.com/api/stats/email-feed-last/:no
+`
+
+- `no` parameter is number of results, possible values are: `10`, `20`, `30`
+
+> Request headers:
+
+```
+Content-Type: application/json; charset=utf-8
+```
+
+> Response headers:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+> Response body:
+
+```json
+[
+    {
+        "id":4612864212,
+        "subject":"Last test for documentation",
+        "sender":"chiara.cortese@dueclic.com",
+        "recipient":"andrea.debernardi@dueclic.com",
+        "sendTime":"2018-04-24T10:58:06.000Z",
+        "status":"SUCCESS",
         "error":null
     }
 ]

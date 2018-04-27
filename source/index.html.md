@@ -8,8 +8,10 @@ language_tabs:
 - json: Request/Response details
 
 includes:
+  - accounts
   - reports
   - statistics
+  - tools
   - errors
 
 search: true

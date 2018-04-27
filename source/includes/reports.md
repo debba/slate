@@ -2,6 +2,8 @@
 
 The following requests will allow you to show a reports list, count results, delete a single instance and export in CSV format.
 
+In the list requests `20` results for page are shown.
+
 ## Reports by type in time range
 
 ### Request endpoint:
@@ -17,7 +19,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&end=:end
 - `start` parameter is a date formatted as 'YYYY-MM-DD'
 - `end` parameter is a date formatted as 'YYYY-MM-DD'
 - `page` parameter represents the page number
-- `filter` parameter is the search filter
+- `filter` parameter is the search filter for email
 - `tz` is the timezone offset (default: `+01:00`)
 
 > Request headers:
@@ -61,7 +63,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&en
 - `start` parameter is a date formatted as 'YYYY-MM-DD'
 - `end` parameter is a date formatted as 'YYYY-MM-DD'
 - `page` parameter represents the page number
-- `filter` parameter is the search filter
+- `filter` parameter is the search filter for email
 - `tz` is the timezone offset (default: `+01:00`)
 
 > Request headers:
@@ -100,7 +102,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&end=
 - `start` parameter is a date formatted as 'YYYY-MM-DD'
 - `end` parameter is a date formatted as 'YYYY-MM-DD'
 - `page` parameter represents the page number
-- `filter` parameter is the search filter
+- `filter` parameter is the search filter for email
 - `tz` is the timezone offset (default: `+01:00`)
 
 ## All reports by type
@@ -116,7 +118,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&filter
     - `spam` for spam
     - `unsub` for unsubscriptions
 - `page` parameter represents the page number
-- `filter` parameter is the search filter
+- `filter` parameter is the search filter for email
 - `tz` is the timezone offset (default: `+01:00`)
 
 > Request headers:
@@ -157,7 +159,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:fil
     - `bounce` for bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
-- `filter` parameter is the search filter
+- `filter` parameter is the search filter for email
 - `tz` is the timezone offset (default: `+01:00`)
 - `page` parameter represents the page number (optional)
 
@@ -197,7 +199,7 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filte
 - `start` parameter is a date formatted as 'YYYY-MM-DD'
 - `end` parameter is a date formatted as 'YYYY-MM-DD'
 - `page` parameter represents the page number
-- `filter` parameter is the search filter
+- `filter` parameter is the search filter for email
 - `tz` is the timezone offset (default: `+01:00`)
 - `page` parameter represents the page number (optional)
 
