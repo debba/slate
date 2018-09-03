@@ -162,7 +162,7 @@ GET https://dashboard.serversmtp.com/api/stats/emails/csv?start_date=:start_date
 - `end_date` parameter is a date formatted as 'YYYY-MM-DD H:i:s'
 - `filter` parameter is the status filter, possible values:
     - `*` or not set to get all statuses
-    - `NEW`, `DEFER`, `SUCCESS`, `OPEN`, `CLICK`, `REPORT`, `FAIL`, `SYSFAIL`, `UNSUB`, `REPORT`
+    - `NEW`, `DEFER`, `SUCCESS`, `OPEN`, `CLICK`, `REPORT`, `FAIL`, `UNSUB`, `REPORT`
     - Combination of statuses in array format
 - `tz` is the timezone offset (default: `+01:00`)
 
@@ -171,4 +171,4 @@ Some filter combinations:
 - Queued emails : `["NEW", "DEFER"]`
 - Delivered emails : `["SUCCESS","OPEN","CLICK","UNSUB","REPORT"]`
 - Read emails : `["OPEN","CLICK","UNSUB","REPORT"]`
-- Bounce emails : `['FAIL', 'SYSFAIL']`
+- Bounce emails : `["FAIL"]`
