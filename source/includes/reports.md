@@ -14,6 +14,8 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&end=:end
 
 - `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
+    - `hardbounce` for hard bounces   
+    - `softbounce` for soft bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
 - `start` parameter is a date formatted as 'YYYY-MM-DD'
@@ -58,6 +60,8 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&en
 
 - `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
+    - `hardbounce` for hard bounces   
+    - `softbounce` for soft bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
 - `start` parameter is a date formatted as 'YYYY-MM-DD'
@@ -97,6 +101,8 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&end=
 
 - `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
+    - `hardbounce` for hard bounces   
+    - `softbounce` for soft bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
 - `start` parameter is a date formatted as 'YYYY-MM-DD'
@@ -115,6 +121,8 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&filter
 
 - `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
+    - `hardbounce` for hard bounces   
+    - `softbounce` for soft bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
 - `page` parameter represents the page number
@@ -157,6 +165,8 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:fil
 
 - `type` parameter represents the type of report, possible values are:
     - `bounce` for bounces
+    - `hardbounce` for hard bounces   
+    - `softbounce` for soft bounces
     - `spam` for spam
     - `unsub` for unsubscriptions
 - `filter` parameter is the search filter for email
