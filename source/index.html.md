@@ -91,8 +91,8 @@ Content-Type: application/json; charset=utf-8
 POST https://api.turbo-smtp.com/api/mail/send
 `
 
-- `username` is the email of turboSMTP account (this param can be used as POST or GET)
-- `password` is the password of turboSMTP account (this param can be used as POST or GET)
+- `authuser` is the email of turboSMTP account (this param can be used as POST or GET)
+- `authpass` is the password of turboSMTP account (this param can be used as POST or GET)
 - `from` is the from address
 - `to` is provided as comma-separated recipients list
 - `subject` is the subject of the email (optional)
