@@ -110,12 +110,11 @@ Content-Type: application/json; charset=utf-8
 ### Request endpoint:
 
 `
-GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&end=:end&page=:page&filter=:filter&tz=:tz
+GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&end=:end&filter=:filter&tz=:tz
 `
 
 - `start` parameter is a date formatted as 'YYYY-MM-DD H:i:s'
 - `end` parameter is a date formatted as 'YYYY-MM-DD H:i:s'
-- `page` parameter represents the page number (optional)
 - `filter` parameter is the status filter, possible values:
     - `*` or not set to get all statuses
     - `NEW`, `DEFER`, `SUCCESS`, `OPEN`, `CLICK`, `REPORT`, `FAIL`, `UNSUB`
