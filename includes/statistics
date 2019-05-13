@@ -100,13 +100,12 @@ Content-Type: application/json; charset=utf-8
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
 <p><code>
-GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
+GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&amp;end=:end&amp;filter=:filter&amp;tz=:tz
 </code></p>
 
 <ul>
 <li><code>start</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
 <li><code>end</code> parameter is a date formatted as &#39;YYYY-MM-DD H:i:s&#39;</li>
-<li><code>page</code> parameter represents the page number (optional)</li>
 <li><code>filter</code> parameter is the status filter, possible values:
 
 <ul>
