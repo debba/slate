@@ -36,7 +36,7 @@ Authorization to access a user’s resource is granted to clients provided they 
 
 As an example, such cookie should look like what follows:
 
-`authorizationKey: 44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c`
+`Authorization: 44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c`
 
 ## Authentication (a.k.a. login)
 
