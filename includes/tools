@@ -12,34 +12,34 @@ GET https://dashboard.serversmtp.com/api/tools/clickTracking/:action
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body (in case of enabling):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clickTracking"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clickTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking_plaintext"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking_plaintext"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='open-tracking-enable-disable'>Open tracking - enable / disable</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='open-tracking-enable-disable'>Open tracking - enable / disable</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/tools/openingTracking/:action
 </code></p>
@@ -51,22 +51,22 @@ GET https://dashboard.serversmtp.com/api/tools/openingTracking/:action
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body (in case of disabling):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openingTracking"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openingTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>

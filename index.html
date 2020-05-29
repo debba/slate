@@ -42,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -126,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -141,16 +141,13 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
 }
 .highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
   color: #ffffff;
 }
 .highlight .ni {
@@ -165,7 +162,7 @@
 .highlight .vi {
   color: #ffffff;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
 }
 .highlight .w {
@@ -176,6 +173,9 @@
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
 }
 .highlight .ow {
   color: #f92672;
@@ -196,20 +196,20 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-0a7c4629.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
   </head>
 
   <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-6123f96e.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="json">Request/Response details</a>
         </div>
@@ -356,29 +356,29 @@ GET https://dashboard.serversmtp.com/api/authorize/:username/:password
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body (successful authentication):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Response body (unsuccessful authentication):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong credentials specified"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong credentials specified"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='send-email'>Send email</h1><h2 id='send-email-2'>Send email</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h1 id='send-email'>Send email</h1><h2 id='send-email-2'>Send email</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
 <p><code>
 POST https://api.turbo-smtp.com/api/mail/send
 </code></p>
@@ -412,32 +412,32 @@ POST https://api.turbo-smtp.com/api/mail/send
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body (successful authentication):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w"> 
-   </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"OK"</span><span class="w"> 
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w"> 
+   </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"OK"</span><span class="w"> 
  </span><span class="p">}</span><span class="w">
 
-</span></code></pre>
+</span></code></pre></div>
 <blockquote>
 <p>Response body (in case of error):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w"> 
-     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w"> 
+     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"error message"</span><span class="w">
      </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w"> 
-</span></code></pre><h1 id='accounts'>Accounts</h1>
+</span></code></pre></div><h1 id='accounts'>Accounts</h1>
 <p>The following requests will allow you to show accounts info.</p>
 <h2 id='account-info'>Account info</h2><h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
@@ -453,27 +453,27 @@ GET https://dashboard.serversmtp.com/api/user/info
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"passwd"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"active"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"andrea@emailchef.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"gateway"</span><span class="p">:</span><span class="s2">"q1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"ip"</span><span class="p">:</span><span class="mi">3350965831</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"accountid"</span><span class="p">:</span><span class="mi">18897904</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"passwd"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"active"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"andrea@emailchef.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gateway"</span><span class="p">:</span><span class="s2">"q1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ip"</span><span class="p">:</span><span class="mi">3350965831</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"accountid"</span><span class="p">:</span><span class="mi">18897904</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='active-plans'>Active plans</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='active-plans'>Active plans</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/plans
 </code></p>
@@ -483,42 +483,42 @@ GET https://dashboard.serversmtp.com/api/plans
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"smtp_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"smtp_limit_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"plan_expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-04T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"smtp_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-24T08:58:06.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parentid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"expired"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"smtp_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"smtp_limit_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"plan_expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-04T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"smtp_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-24T08:58:06.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parentid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expired"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"smtp_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"smtp_limit_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monthly"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"plan_expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-03T00:00:00.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"smtp_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-04T08:47:16.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parentid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"expired"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accountID"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"smtp_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"smtp_limit_interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monthly"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"plan_expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-03T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"smtp_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_used"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-04T08:47:16.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parentid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expired"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}]</span><span class="w">
 
-</span></code></pre><h2 id='subaccounts-list'>Subaccounts list</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='subaccounts-list'>Subaccounts list</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/useraccounts/summary
 </code></p>
@@ -528,28 +528,28 @@ GET https://dashboard.serversmtp.com/api/useraccounts/summary
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
-     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subaccount@dueclic.com"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"199.244.75.99"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"sent"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">584</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subaccount@dueclic.com"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"199.244.75.99"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"sent"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"reputation"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
  </span><span class="p">}]</span><span class="w">
 
-</span></code></pre><h1 id='reports'>Reports</h1>
+</span></code></pre></div><h1 id='reports'>Reports</h1>
 <p>The following requests will allow you to show a reports list, count results, delete a single instance and export in CSV format.</p>
 
 <p>In the list requests <code>20</code> results for page are shown.</p>
@@ -578,26 +578,26 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type?start=:start&amp;end=
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">323223135</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andrea.colombini@dueclic.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27T06:31:42.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.149.128.154 does not like recipient. Remote host said: 550 5.1.1 &lt;andrea.colombini@dueclic.com&gt; : sorry, no mailbox here by that name (#5.1.1 - chkuser) {1.2.3.4} Giving up on 1.2.3.4. "</span><span class="w">
+        </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">323223135</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andrea.colombini@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27T06:31:42.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.149.128.154 does not like recipient. Remote host said: 550 5.1.1 &lt;andrea.colombini@dueclic.com&gt; : sorry, no mailbox here by that name (#5.1.1 - chkuser) {1.2.3.4} Giving up on 1.2.3.4. "</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='count-reports-by-type-in-time-range'>Count reports by type in time range</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='count-reports-by-type-in-time-range'>Count reports by type in time range</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
 </code></p>
@@ -622,21 +622,21 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/count?start=:start&am
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='export-reports-in-csv-by-type-in-time-range'>Export reports in CSV by type in time range</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='export-reports-in-csv-by-type-in-time-range'>Export reports in CSV by type in time range</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/web/api/reports/:type/csv?start=:start&amp;end=:end&amp;page=:page&amp;filter=:filter&amp;tz=:tz
 </code></p>
@@ -680,26 +680,26 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all?page=:page&amp;fi
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">323223135</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27T06:31:42.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.149.128.154 does not like recipient. Remote host said: 550 5.1.1 &lt;andrea.debernardi@dueclic.com&gt; : sorry, no mailbox here by that name (#5.1.1 - chkuser) {1.2.3.4} Giving up on 1.2.3.4. "</span><span class="w">
+        </span><span class="nl">"cid"</span><span class="p">:</span><span class="w"> </span><span class="mi">323223135</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-27T06:31:42.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62.149.128.154 does not like recipient. Remote host said: 550 5.1.1 &lt;andrea.debernardi@dueclic.com&gt; : sorry, no mailbox here by that name (#5.1.1 - chkuser) {1.2.3.4} Giving up on 1.2.3.4. "</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='count-all-reports-by-type'>Count all reports by type</h2><h3 id='request-endpoint-5'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='count-all-reports-by-type'>Count all reports by type</h2><h3 id='request-endpoint-5'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:filter&amp;tz=:tz&amp;page=:page
 </code></p>
@@ -722,21 +722,21 @@ GET https://dashboard.serversmtp.com/web/api/reports/:type/all/count?filter=:fil
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">520</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">520</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='export-all-reports-in-csv-by-type'>Export all reports in CSV by type</h2><h3 id='request-endpoint-6'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='export-all-reports-in-csv-by-type'>Export all reports in CSV by type</h2><h3 id='request-endpoint-6'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/web/api/reports/:type/all/csv?filter=:filter&amp;tz=:tz&amp;page=:page
 </code></p>
@@ -775,21 +775,21 @@ DELETE https://dashboard.serversmtp.com/web/api/reports/:type?ids=:ids
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='delete-all-spam-reports'>Delete all spam reports</h2><h3 id='request-endpoint-8'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='delete-all-spam-reports'>Delete all spam reports</h2><h3 id='request-endpoint-8'>Request endpoint:</h3>
 <p><code>
 DELETE https://dashboard.serversmtp.com/web/api/reports/spam/all
 </code></p>
@@ -799,21 +799,21 @@ DELETE https://dashboard.serversmtp.com/web/api/reports/spam/all
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"success"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='statistics'>Statistics</h1>
+</span></code></pre></div><h1 id='statistics'>Statistics</h1>
 <p>The following requests will allow you to show statistics list, count results and export in CSV format.</p>
 
 <p>In the list requests <code>10</code> results for page are shown.</p>
@@ -848,38 +848,38 @@ GET https://dashboard.serversmtp.com/api/stats/panes/emails?start=:start&amp;end
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4612864212</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Test for documentation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender"</span><span class="p">:</span><span class="s2">"christian.serafino@dueclic.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"andrea@debbaweb.it"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-24T10:58:06.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">4612864212</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subject"</span><span class="p">:</span><span class="s2">"Test for documentation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sender"</span><span class="p">:</span><span class="s2">"christian.serafino@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"recipient"</span><span class="p">:</span><span class="s2">"andrea@debbaweb.it"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-24T10:58:06.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4611292665</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Test for documentation #2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender"</span><span class="p">:</span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"test-dev@dueclic.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-23T17:33:02.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"OPEN"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">4611292665</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subject"</span><span class="p">:</span><span class="s2">"Test for documentation #2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sender"</span><span class="p">:</span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"recipient"</span><span class="p">:</span><span class="s2">"test-dev@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-23T17:33:02.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"OPEN"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='last-email-sent-statistics'>Last email sent statistics</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='last-email-sent-statistics'>Last email sent statistics</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/email-feed-last/:no
 </code></p>
@@ -891,29 +891,29 @@ GET https://dashboard.serversmtp.com/api/stats/email-feed-last/:no
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4612864212</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subject"</span><span class="p">:</span><span class="s2">"Last test for documentation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sender"</span><span class="p">:</span><span class="s2">"chiara.cortese@dueclic.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-24T10:58:06.000Z"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">4612864212</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subject"</span><span class="p">:</span><span class="s2">"Last test for documentation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sender"</span><span class="p">:</span><span class="s2">"chiara.cortese@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"recipient"</span><span class="p">:</span><span class="s2">"andrea.debernardi@dueclic.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sendTime"</span><span class="p">:</span><span class="s2">"2018-04-24T10:58:06.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"error"</span><span class="p">:</span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='count-of-email-sent'>Count of email sent</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&amp;end=:end&amp;filter=:filter&amp;tz=:tz
 </code></p>
@@ -943,21 +943,21 @@ GET https://dashboard.serversmtp.com/api/stats/panes/emails/count?start=:start&a
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">220</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='export-email-sent-statistics-in-csv'>Export email sent statistics in CSV</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='export-email-sent-statistics-in-csv'>Export email sent statistics in CSV</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/stats/emails/csv?start_date=:start_date&amp;end_date=:end_date&amp;filter=:filter&amp;tz=:tz
 </code></p>
@@ -997,34 +997,34 @@ GET https://dashboard.serversmtp.com/api/tools/clickTracking/:action
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body (in case of enabling):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clickTracking"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clickTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking_plaintext"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking_plaintext"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='open-tracking-enable-disable'>Open tracking - enable / disable</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='open-tracking-enable-disable'>Open tracking - enable / disable</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
 <p><code>
 GET https://dashboard.serversmtp.com/api/tools/openingTracking/:action
 </code></p>
@@ -1036,25 +1036,25 @@ GET https://dashboard.serversmtp.com/api/tools/openingTracking/:action
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
 <blockquote>
 <p>Response headers:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Response body (in case of disabling):</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openingTracking"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openingTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='errors'>Errors</h1>
+</span></code></pre></div><h1 id='errors'>Errors</h1>
 <p>The turboSMTP API uses the following error codes:</p>
 
 <table><thead>
