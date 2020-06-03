@@ -238,6 +238,9 @@
                   <li>
                     <a href="#authentication-a-k-a-login" class="toc-h2 toc-link" data-title="Authentication (a.k.a. login)">Authentication (a.k.a. login)</a>
                   </li>
+                  <li>
+                    <a href="#revoke-api-access" class="toc-h2 toc-link" data-title="Revoke API Access">Revoke API Access</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -338,25 +341,67 @@
 <h2 id='accessing-resources'>Accessing resources</h2>
 <p>Authorization to access a user’s resource is granted to clients provided they set a authentication cookie into their request, valued with the proper authentication key issued by turboSMTP servers. The authentication key is user-based and it is issued by turboSMTP servers upon successful user’s email address + password challenge, performed by means of appropriate request.</p>
 
-<p>As an example, such cookie should look like what follows:</p>
+<p>As an example, such cookie or request header should look like what follows:</p>
 
 <p><code>Authorization: 44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c</code></p>
 <h2 id='authentication-a-k-a-login'>Authentication (a.k.a. login)</h2>
-<p>The <code>auth</code> value in the response has to be used as a custom cookie for all requests towards turboSMTP&#39;s API.</p>
-<h3 id='request-endpoint'>Request endpoint:</h3>
-<p><code>
-GET https://dashboard.serversmtp.com/api/authorize/:username/:password
-</code></p>
-
-<ul>
-<li><code>username</code> is the email of turboSMTP account</li>
-<li><code>password</code> is the password of turboSMTP account</li>
-</ul>
-
 <blockquote>
 <p>Request headers:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
+<blockquote>
+<p>Request Body Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"turboSMTP email address"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"turboSMTP password"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"no_expire"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre></div>
+<blockquote>
+<p>Response body (successful authentication):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"44cf4c36d0e9cbe32f6fd83ff69a9df3b62128s28c"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Response body (unsuccessful authentication):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong credentials specified"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The <code>auth</code> value in the response has to be used as a custom header or cookie for all requests towards turboSMTP&#39;s API.</p>
+<h3 id='request-endpoint'>Request endpoint:</h3>
+<p><code>
+POST https://dashboard.serversmtp.com/api/authorize
+</code></p>
+
+<ul>
+<li><code>email</code> is the email of turboSMTP account</li>
+<li><code>password</code> is the password of turboSMTP account</li>
+<li><code>no_expire</code> (optional) in this case session doesn&#39;t expire.</li>
+</ul>
+
+<p>If no_expire value is not specified or is set to 0, the authentication will expire in 1 hour, otherwise it will not expire.</p>
+
+<p>You can revoke API access using the <strong>deauthorize</strong> endpoint.</p>
+<h2 id='revoke-api-access'>Revoke API Access</h2>
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+Authorization: "your authorization token"
 </code></pre></div>
 <blockquote>
 <p>Response headers:</p>
@@ -368,17 +413,27 @@ Content-Type: application/json; charset=utf-8
 <p>Response body (successful authentication):</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"auth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c"</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token deauthorized"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Response body (unsuccessful authentication):</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"errorCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrong credentials specified"</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No authorization key was specified for request"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='send-email'>Send email</h1><h2 id='send-email-2'>Send email</h2>
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This authorization token doesn't exist."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+POST https://dashboard.serversmtp.com/api/deauthorize
+</code></p>
+
+<p>No params needed</p>
+<h1 id='send-email'>Send email</h1><h2 id='send-email-2'>Send email</h2>
 <blockquote>
 <p>Request Body Example</p>
 </blockquote>
@@ -442,7 +497,7 @@ Content-Type: application/json; charset=utf-8
         </span><span class="s2">"error message"</span><span class="w">
      </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w"> 
-</span></code></pre></div><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h3 id='request-endpoint-3'>Request endpoint:</h3>
 <p><code>
 POST https://api.turbo-smtp.com/api/mail/send
 </code></p>
