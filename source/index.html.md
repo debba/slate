@@ -34,27 +34,27 @@ For the most part (and where not otherwise explicit) turboSMTP’s API uses JSON
 
 Authorization to access a user’s resource is granted to clients provided they set a authentication cookie into their request, valued with the proper authentication key issued by turboSMTP servers. The authentication key is user-based and it is issued by turboSMTP servers upon successful user’s email address + password challenge, performed by means of appropriate request.
 
-As an example, such cookie should look like what follows:
+As an example, such cookie or request header should look like what follows:
 
 `Authorization: 44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c`
 
 ## Authentication (a.k.a. login)
 
-The `auth` value in the response has to be used as a custom cookie for all requests towards turboSMTP's API.
-
-### Request endpoint:
-
-`
-GET https://dashboard.serversmtp.com/api/authorize/:username/:password
-`
-
-- `username` is the email of turboSMTP account
-- `password` is the password of turboSMTP account
-
 > Request headers:
 
 ```
 Content-Type: application/json; charset=utf-8
+```
+
+> Request Body Example
+
+```json
+
+{
+	"email": "turboSMTP email address",
+	"password": "turboSMTP password",
+    "no_expire": "1"
+}
 ```
 
 > Response headers:
@@ -68,7 +68,7 @@ Content-Type: application/json; charset=utf-8
 
 ```json
 {
-    "auth" : "44cf4c36d0e9cbe32f6fd83ff69a9df3b6212828c"
+    "auth" : "44cf4c36d0e9cbe32f6fd83ff69a9df3b62128s28c"
 }
 ```
 
@@ -80,6 +80,70 @@ Content-Type: application/json; charset=utf-8
     "message": "Wrong credentials specified"
 }
 ```
+
+The `auth` value in the response has to be used as a custom header or cookie for all requests towards turboSMTP's API.
+
+### Request endpoint:
+
+`
+POST https://dashboard.serversmtp.com/api/authorize
+`
+
+- `email` is the email of turboSMTP account
+- `password` is the password of turboSMTP account
+- `no_expire` (optional) in this case session doesn't expire.
+
+If no_expire value is not specified or is set to 0, the authentication will expire in 1 hour, otherwise it will not expire.
+
+You can revoke API access using the **deauthorize** endpoint.
+
+## Revoke API Access
+
+> Request headers:
+
+```
+Content-Type: application/json; charset=utf-8
+Authorization: "your authorization token"
+```
+
+> Response headers:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+```
+
+> Response body (successful authentication):
+
+```json
+{
+    "message": "Token deauthorized"
+}
+```
+
+> Response body (unsuccessful authentication):
+
+```json
+{
+    "errorCode": 8,
+    "message": "No authorization key was specified for request"
+}
+```
+
+```json
+{
+    "errorCode": 9,
+    "message": "This authorization token doesn't exist."
+}
+```
+
+### Request endpoint:
+
+`
+POST https://dashboard.serversmtp.com/api/deauthorize
+`
+
+No params needed
 
 # Send email
 
