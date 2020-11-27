@@ -244,6 +244,9 @@
               </ul>
           </li>
           <li>
+            <a href="#webhooks" class="toc-h1 toc-link" data-title="Webhooks">Webhooks</a>
+          </li>
+          <li>
             <a href="#send-email" class="toc-h1 toc-link" data-title="Send email">Send email</a>
               <ul class="toc-list-h2">
                   <li>
@@ -433,6 +436,12 @@ POST https://dashboard.serversmtp.com/api/deauthorize
 </code></p>
 
 <p>No params needed</p>
+<h1 id='webhooks'>Webhooks</h1>
+<p>TurboSMTP offers two types of event webhooks (Server To Server notification of events that occur to your emails): delivery and engagement events.
+The status of email delivery to the recipient is indicated by the delivery event, while the interaction of recipients with the email is represented by the engagement event.
+Please check the following pages for further information:
+- English: https://www.serversmtp.com/event-webhook-reference/
+- Italiano: https://www.serversmtp.com/it/documentazione-per-le-notifiche-di-eventi-webhooks/</p>
 <h1 id='send-email'>Send email</h1><h2 id='send-email-2'>Send email</h2>
 <blockquote>
 <p>Request Body Example</p>
@@ -497,7 +506,7 @@ Content-Type: application/json; charset=utf-8
         </span><span class="s2">"error message"</span><span class="w">
      </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w"> 
-</span></code></pre></div><h3 id='request-endpoint-3'>Request endpoint:</h3>
+</span></code></pre></div><h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
 POST https://api.turbo-smtp.com/api/mail/send
 </code></p>
