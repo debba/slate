@@ -3,6 +3,7 @@ title: API Reference
 
 toc_footers:
   - <a href='https://www.serversmtp.com'>Go to turboSMTP website</a>
+  - <a href='https://www.serversmtp.com/event-webhook-reference/'>Go to turboSMTP webhooks reference</a>
   - <a href='https://dashboard.serversmtp.com'>Go to turboSMTP dashboard</a>
   
 language_tabs:
