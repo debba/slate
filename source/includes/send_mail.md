@@ -80,7 +80,7 @@ Content-Type: application/json; charset=utf-8
 
 `POST https://api.eu.turbo-smtp.com/api/v2/mail/send` --> for **EU** users
 
-`POST https://api.turbo-smtp.com/api/v2/mail/send` --> for **NONE EU** users
+`POST https://api.turbo-smtp.com/api/v2/mail/send` --> for **NON EU** users
 
 - `authuser` is the email of turboSMTP account (this param can be used as POST or Headers)
 - `authpass` is the password of turboSMTP account (this param can be used as POST or Headers)
@@ -114,21 +114,21 @@ Response Code | Response Message | Description
 
 ### Some implementations
 
-PHP: [Download PHP sample code](https://dashboard.serversmtp.com/downloads/turbo_send_email_code.zip "Go to PHP implementation")
+PHP: [Download PHP sample code](https://dashboard.serversmtp.com/downloads/turbo_send_email_code_v2.zip "Go to PHP implementation")
 
-C#: [Download C# sample code](https://dashboard.serversmtp.com/downloads/CSharp-turboSMTP-API.zip "Go to C# implementation")
+C#: [Download C# sample code](https://dashboard.serversmtp.com/downloads/CSharp-turboSMTP-API_v2.zip "Go to C# implementation")
 
-Java: [Download Java sample code](https://dashboard.serversmtp.com/downloads/Java-turboSMTP-API.zip "Go to Java implementation")
+Java: [Download Java sample code](https://dashboard.serversmtp.com/downloads/Java-turboSMTP-API_v2.zip "Go to Java implementation")
 
-Python: [Download Python sample code](https://dashboard.serversmtp.com/downloads/Python-turboSMTP-API.zip "Go to Python implementation")
+Python: [Download Python sample code](https://dashboard.serversmtp.com/downloads/Python-turboSMTP-API_v2.zip "Go to Python implementation")
 
-Perl: [Download Perl sample code](https://dashboard.serversmtp.com/downloads/Perl-turboSMTP-API.zip "Go to Perl implementation")
+Perl: [Download Perl sample code](https://dashboard.serversmtp.com/downloads/Perl-turboSMTP-API_v2.zip "Go to Perl implementation")
 
-Ruby: [Download Ruby sample code](https://dashboard.serversmtp.com/downloads/Ruby-turboSMTP-API.zip "Go to Ruby implementation")
+Ruby: [Download Ruby sample code](https://dashboard.serversmtp.com/downloads/Ruby-turboSMTP-API_v2.zip "Go to Ruby implementation")
 
 
 ## Send email V1  <span class = "deprecated">deprecated</span>
-<span class = "deprecated">This endpoint will be deprecated by June 2021</span>
+<span class = "deprecated">This endpoint is deprecated and will stop working on June 30th, 2021</span>
 > Request Body Example
 
 ```json
