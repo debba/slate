@@ -617,3 +617,19 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+pre.mid-pre {
+    clear: none;
+    float: left !important;
+    width: 46%;
+    margin: 0 2%;
+    background-color: rgba(0,0,0,0.05);
+    padding: 10px 15px;
+    border-radius: 3px;
+    color: #333;
+}
+
+.deprecated{
+    color: red;
+    font-weight: bold;
+}
