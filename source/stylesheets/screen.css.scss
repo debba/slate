@@ -633,3 +633,10 @@ pre.mid-pre {
     color: red;
     font-weight: bold;
 }
+
+.toc-wrapper .deprecated {
+    color: #ff6d6d;
+}
+.toc-wrapper a.active .deprecated {
+    color: #7dc0fb;
+}
