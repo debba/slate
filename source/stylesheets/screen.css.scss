@@ -619,8 +619,8 @@ html, body {
 }
 
 pre.mid-pre {
-    clear: none;
-    float: left !important;
+    clear: both;
+    float: none !important;
     width: 46%;
     margin: 0 2%;
     background-color: rgba(0,0,0,0.05);

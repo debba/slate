@@ -62,8 +62,6 @@ Content-Type: application/json; charset=utf-8
 
 ```
 
-> [Errors List](#send-api-errors "Errors List"):
-
 > Response body Example (in case of error):
  
 
@@ -112,6 +110,9 @@ Response Code | Response Message | Description
 401           | UNAUTHORIZED       | Wrong credentials
 500           | SERVER_UNAVAILABLE | An error occurred on a Turbo-Smtp server.
 
+<h3>Errors</h3>
+<p>Please check <a href="#send-api-errors">Errors section</a> for a detailed errors documentation.</p>
+
 ### Some implementations
 
 PHP: [Download PHP sample code](https://dashboard.serversmtp.com/downloads/turbo_send_email_code_v2.zip "Go to PHP implementation")
@@ -129,6 +130,16 @@ Ruby: [Download Ruby sample code](https://dashboard.serversmtp.com/downloads/Rub
 
 ## Send email V1  <span class = "deprecated">deprecated</span>
 <span class = "deprecated">This endpoint is deprecated and will stop working on June 30th, 2021</span>
+
+<h3>Migration instructions</h3>
+<ol>
+<li> Change the API url from <code>https://api.turbo-smtp.com/api/mail/send</code> to:<br>
+   <code>https://api.turbo-smtp.com/api/v2/mail/send</code> (NON EU users)<br>
+   or<br>
+   <code>https://api.eu.turbo-smtp.com/api/v2/mail/send</code> (EU users)</li>
+<li>Handle all types of status codes and status messages refer to <a href="#send-email-v2">Send API v2</a></li>
+</ol>
+
 > Request Body Example
 
 ```json

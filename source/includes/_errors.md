@@ -18,7 +18,7 @@ Error Type | Meaning
 
 
 
-- Missing username/password
+<h3>Missing username/password</h3>
 
 <pre class="mid-pre">{
     "errorCode": 3,
@@ -27,7 +27,7 @@ Error Type | Meaning
 }
 </pre>
 
-- Invalid username/password
+<h3>Invalid username/password</h3>
 
 <pre class="mid-pre">{
     "error": 3,
@@ -35,7 +35,7 @@ Error Type | Meaning
 }
 </pre>
 
-- Missing sender
+<h3>Missing sender</h3>
 
 <pre class="mid-pre">{
     "message": "error",
@@ -45,7 +45,7 @@ Error Type | Meaning
 }
 </pre>
 
-- Missing recipients
+<h3>Missing recipients</h3>
 
 <pre class="mid-pre">{
     "message": "error",
@@ -55,7 +55,7 @@ Error Type | Meaning
 }
 </pre>
 
-- Invalid recipients (to-cc-bcc)
+<h3>Invalid recipients (to-cc-bcc)</h3>
 
 <pre class="mid-pre">{
     "message": "error",
@@ -68,7 +68,7 @@ Error Type | Meaning
 </pre>
 
 
-- Invalid Mime
+<h3>Invalid Mime</h3>
 
 <pre class="mid-pre">{
     "message": "error",
@@ -79,7 +79,7 @@ Error Type | Meaning
 }
 </pre>
 
-- No enough credit in account subscription
+<h3>No enough credit in account subscription</h3>
 
 <pre class="mid-pre">{
     "message": "error",
@@ -90,7 +90,7 @@ Error Type | Meaning
 }
 </pre>
 
-- deactivated account
+<h3>deactivated account</h3>
 
 <pre class="mid-pre">{
     "error": 3,
