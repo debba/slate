@@ -54,8 +54,6 @@ Content-Type: application/json; charset=utf-8
 
 </span></code></pre></div>
 <blockquote>
-<p><a href="#send-api-errors" title="Errors List">Errors List</a>:</p>
-
 <p>Response body Example (in case of error):</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w"> 
@@ -120,6 +118,10 @@ Content-Type: application/json; charset=utf-8
 <td>An error occurred on a Turbo-Smtp server.</td>
 </tr>
 </tbody></table>
+
+<h3>Errors</h3>
+
+<p>Please check <a href="#send-api-errors">Errors section</a> for a detailed errors documentation.</p>
 <h3 id='some-implementations'>Some implementations</h3>
 <p>PHP: <a href="https://dashboard.serversmtp.com/downloads/turbo_send_email_code_v2.zip" title="Go to PHP implementation">Download PHP sample code</a></p>
 
@@ -134,6 +136,16 @@ Content-Type: application/json; charset=utf-8
 <p>Ruby: <a href="https://dashboard.serversmtp.com/downloads/Ruby-turboSMTP-API_v2.zip" title="Go to Ruby implementation">Download Ruby sample code</a></p>
 <h2 id='send-email-v1-deprecated'>Send email V1  <span class = "deprecated">deprecated</span></h2>
 <p><span class = "deprecated">This endpoint is deprecated and will stop working on June 30th, 2021</span></p>
+
+<h3>Migration instructions</h3>
+
+<ol>
+<li> Change the API url from <code>https://api.turbo-smtp.com/api/mail/send</code> to:<br>
+   <code>https://api.turbo-smtp.com/api/v2/mail/send</code> (NON EU users)<br>
+   or<br>
+   <code>https://api.eu.turbo-smtp.com/api/v2/mail/send</code> (EU users)</li>
+<li>Handle all types of status codes and status messages refer to <a href="#send-email-v2">Send API v2</a></li>
+</ol>
 
 <blockquote>
 <p>Request Body Example</p>
