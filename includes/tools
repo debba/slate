@@ -1,8 +1,69 @@
 <h1 id='tools'>Tools</h1>
-<p>The following requests will allow you to enable / disable some turboSMTP tools.</p>
-<h2 id='click-tracking-enable-disable'>Click tracking - enable / disable</h2><h3 id='request-endpoint'>Request endpoint:</h3>
+<p>The following requests will allow you to see if turboSMTP tools are enabled / disabled and change.</p>
+<h2 id='click-tracking-status'>Click tracking status</h2><h3 id='request-endpoint'>Request endpoint:</h3>
 <p><code>
-GET https://dashboard.serversmtp.com/api/tools/clickTracking/:action
+GET https://dashboard.serversmtp.com/api/tools/clickTracking
+</code></p>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre></div>
+<blockquote>
+<p>Response body (in case of enabling):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clickTracking"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clicktracking_plaintext"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='open-tracking-status'>Open tracking status</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+<p><code>
+GET https://dashboard.serversmtp.com/api/tools/openingTracking
+</code></p>
+
+<blockquote>
+<p>Request headers:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>Content-Type: application/json; charset=utf-8
+</code></pre></div>
+<blockquote>
+<p>Response headers:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+</code></pre></div>
+<blockquote>
+<p>Response body (in case of enabling):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"openingTracking"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"forced"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requiredSettings"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='enable-disable-click-tracking'>Enable / disable click tracking</h2><h3 id='request-endpoint-3'>Request endpoint:</h3>
+<p><code>
+PUT https://dashboard.serversmtp.com/api/tools/clickTracking/:action
 </code></p>
 
 <ul>
@@ -39,9 +100,9 @@ Content-Type: application/json; charset=utf-8
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='open-tracking-enable-disable'>Open tracking - enable / disable</h2><h3 id='request-endpoint-2'>Request endpoint:</h3>
+</span></code></pre></div><h2 id='enable-disable-open-tracking'>Enable / disable open tracking</h2><h3 id='request-endpoint-4'>Request endpoint:</h3>
 <p><code>
-GET https://dashboard.serversmtp.com/api/tools/openingTracking/:action
+PUT https://dashboard.serversmtp.com/api/tools/openingTracking/:action
 </code></p>
 
 <ul>
